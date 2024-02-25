@@ -1,3 +1,9 @@
+[![Go Reference](https://pkg.go.dev/badge/github.com/n-r-w/sfcache.svg)](https://pkg.go.dev/github.com/n-r-w/sfcache)
+[![Go Coverage](https://github.com/n-r-w/sfcache/wiki/coverage.svg)](https://raw.githack.com/wiki/n-r-w/sfcache/coverage.html)
+![CI Status](https://github.com/n-r-w/sfcache/actions/workflows/go.yml/badge.svg)
+[![Stability](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
+[![Go Report](https://goreportcard.com/badge/github.com/n-r-w/sfcache)](https://goreportcard.com/badge/github.com/n-r-w/sfcache)
+
 # sfcache
 
 Singleflight group with internal LRU cache
