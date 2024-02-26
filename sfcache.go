@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/hashicorp/golang-lru/v2/expirable"
-	"github.com/n-r-w/singleflight"
+	"github.com/n-r-w/singleflight/v2"
 )
 
 // Group singleflight group with LRU cache
@@ -62,8 +62,8 @@ func (g *Group[K, V]) Do(ctx context.Context,
 		}
 	}
 
-	val, err, shared = g.sfgroup.Do(key, func() (V, error) {
-		v, err1 := fn(ctx)
+	val, shared, err = g.sfgroup.Do(ctx, key, func(ctxFunc context.Context) (V, error) {
+		v, err1 := fn(ctxFunc)
 		if err1 != nil {
 			var zeroV V
 			return zeroV, err1
